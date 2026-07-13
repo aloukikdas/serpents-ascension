@@ -1,6 +1,7 @@
 # Game Architecture
 
 ## Scene Tree
+```text
 Main (Node2D)
 ├── Background
 ├── Camera2D
@@ -17,6 +18,7 @@ Main (Node2D)
 │   ├── Decorations (Node2D)
 │   └── Effects (Node2D)
 └── CanvasLayer (UI)
+```
 
 ## Managers (AutoLoads)
 * **GameManager:** Global game state.
