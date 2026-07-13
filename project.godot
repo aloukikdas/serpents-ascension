@@ -13,3 +13,17 @@ config_version=5
 config/name="Serpent's Ascension"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://Scripts/Managers/GameManager.gd"
+AudioManager="*res://Scripts/Managers/AudioManager.gd"
+BoardManager="*res://Scripts/Managers/BoardManager.gd"
+DialogueManager="*res://Scripts/Managers/DialogueManager.gd"
+DiceManager="*res://Scripts/Managers/DiceManager.gd"
+LadderManager="*res://Scripts/Managers/LadderManager.gd"
+PlayerManager="*res://Scripts/Managers/PlayerManager.gd"
+SaveManager="*res://Scripts/Managers/SaveManager.gd"
+SnakeManager="*res://Scripts/Managers/SnakeManager.gd"
+TurnManager="*res://Scripts/Managers/TurnManager.gd"
+UiManager="*res://Scripts/Managers/UIManager.gd"
