@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bto1a6poycdx1"]
+[gd_scene load_steps=2 format=3 uid="uid://bto1a6poycdx1"]
+
+[ext_resource type="PackedScene" uid="uid://bi4er8c7lb6i6" path="res://Scenes/Board/Board.tscn" id="1_p8rbg"]
 
 [node name="Main" type="Node2D"]
 
@@ -6,6 +8,6 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="World" type="Node2D" parent="."]
+[node name="Board" parent="." instance=ExtResource("1_p8rbg")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
