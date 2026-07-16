@@ -9,7 +9,11 @@ script = ExtResource("1_8bnye")
 
 [node name="Sprite2D" type="Sprite2D" parent="Visual"]
 
-[node name="Label" type="Label" parent="Visual"]
+[node name="ColorRect" type="ColorRect" parent="Visual"]
+offset_right = 96.0
+offset_bottom = 96.0
+
+[node name="TileNumber" type="Label" parent="Visual"]
 offset_right = 40.0
 offset_bottom = 23.0
 

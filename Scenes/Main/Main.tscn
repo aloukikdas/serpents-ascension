@@ -7,6 +7,8 @@
 [node name="Background" type="Sprite2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(500, 500)
+zoom = Vector2(0.6, 0.6)
 
 [node name="Board" parent="." instance=ExtResource("1_p8rbg")]
 
