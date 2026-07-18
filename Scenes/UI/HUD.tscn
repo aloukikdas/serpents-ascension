@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwpw10t1w6c8"]
+
+[ext_resource type="Script" uid="uid://dem18a8qmhfuo" path="res://Scripts/UI/HUD.gd" id="1_omqfp"]
+[ext_resource type="PackedScene" uid="uid://blo08ndvh03qm" path="res://Scenes/Dice/Dice.tscn" id="2_qc5w2"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_omqfp")
+
+[node name="TopBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BottomBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RollButton" type="Button" parent="BottomBar"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 595.0
+offset_right = 146.0
+offset_bottom = 626.0
+text = "ROLL DICE"
+
+[node name="DiceContainer" type="Control" parent="BottomBar"]
+anchors_preset = 0
+offset_left = 84.0
+offset_top = 548.0
+offset_right = 124.0
+offset_bottom = 588.0
+
+[node name="Dice" parent="BottomBar/DiceContainer" instance=ExtResource("2_qc5w2")]
+position = Vector2(-4, 10)
+
+[node name="EventFeed" type="VBoxContainer" parent="."]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 42.0
+offset_bottom = 41.0
+
+[node name="PopupLayer" type="CanvasLayer" parent="."]
