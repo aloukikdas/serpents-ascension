@@ -15,3 +15,7 @@ func setup(id: int, grid_position: Vector2i) -> void:
 	tile_id = id
 	board_position = grid_position
 	tile_number.text = str(id)
+
+# Called by the MovementController when a player lands here
+func on_player_enter(player: Player) -> void:
+	pass

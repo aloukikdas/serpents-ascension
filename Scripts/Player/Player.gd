@@ -4,8 +4,10 @@ extends Node2D
 # --------------------------------------------------
 # Signals
 # --------------------------------------------------
-signal tile_changed(new_tile: int)
-signal movement_finished
+signal movement_started
+signal tile_entered(tile_id: int)
+signal tile_left(tile_id: int)
+signal movement_finished(final_tile: int)
 signal state_changed(new_state: PlayerState)
 
 # --------------------------------------------------
@@ -13,10 +15,11 @@ signal state_changed(new_state: PlayerState)
 # --------------------------------------------------
 enum PlayerState {
 	IDLE,
-	WAITING,
+	ROLLING,
 	MOVING,
-	ANIMATING,
-	WINNER
+	SNAKE,
+	LADDER,
+	WINNING
 }
 
 var state: PlayerState = PlayerState.IDLE
@@ -29,14 +32,18 @@ var state: PlayerState = PlayerState.IDLE
 @export var is_ai: bool = false
 
 # --------------------------------------------------
-# Gameplay
+# Gameplay & Statistics
 # --------------------------------------------------
 var current_tile: int = 1
 var previous_tile: int = 1
-var total_rolls: int = 0
-var snakes_hit: int = 0
-var ladders_climbed: int = 0
-var wins: int = 0
+
+var statistics: Dictionary = {
+	"tiles_walked": 0,
+	"snakes_hit": 0,
+	"ladders_used": 0,
+	"games_played": 0,
+	"highest_roll": 0
+}
 
 # --------------------------------------------------
 # References
@@ -47,6 +54,7 @@ var wins: int = 0
 @onready var spawn_particles: GPUParticles2D = $SpawnParticles
 @onready var name_label: Label = $NameLabel
 @onready var state_label: Label = $StateLabel
+@onready var footstep_audio: AudioStreamPlayer = $FootStepAudio
 
 # --------------------------------------------------
 # Engine
@@ -63,6 +71,9 @@ func initialize(id: int, p_name: String, ai: bool = false) -> void:
 	player_name = p_name
 	is_ai = ai
 	name_label.text = player_name
+
+func move_steps(steps: int) -> void:
+	MovementController.move_player(self, steps)
 
 func move_to_tile(tile_id: int) -> void:
 	pass

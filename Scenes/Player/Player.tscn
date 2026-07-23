@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4332g6umuoac"]
+[gd_scene load_steps=4 format=3 uid="uid://c4332g6umuoac"]
 
 [ext_resource type="Script" uid="uid://dcm12124hmdd3" path="res://Scripts/Player/Player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://h51gmkjrvcoj" path="res://icon.svg" id="1_s0eop"]
+[ext_resource type="AudioStream" uid="uid://d2d48k2igoj05" path="res://Assets/Audio/SFX/switch3.ogg" id="3_h54ih"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_ft8w5")
@@ -28,3 +29,7 @@ horizontal_alignment = 1
 [node name="StateLabel" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="FootStepAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_h54ih")
+volume_db = 11.415
